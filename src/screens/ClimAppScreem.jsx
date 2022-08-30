@@ -62,6 +62,7 @@ useEffect(() => {
   const success = (posicion)=>{
     const latitud = posicion.coords.latitude 
     const longitud = posicion.coords.longitude 
+
     setLatlon({latitud, longitud})
   }
   navigator.geolocation.getCurrentPosition(success)
@@ -69,8 +70,10 @@ useEffect(() => {
 
 useEffect(() => {
   if(latlon != undefined){
-    const API_KEY = "b709e6b93347071ae10b1cc0d6f2607e";
-    const URL = `https://api.openweathermap.org/data/2.5/weather?lat=${latlon.latitud}&lon=${latlon.longitud}&appid=${API_KEY}`;
+    const API_KEY = "5f961bf11bc80bee3a05cb5da85cad2a";
+    const city = "villavicencio"
+    const URL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=${API_KEY}`;
+    
     axios
     .get(URL)
     .then((res)=>setClima(res.data))
@@ -92,18 +95,18 @@ console.log(clima)
 
 const valorTemp = () =>{
   if(temperatura=='Celcius'){
-    return ((clima?.main.temp)-273.44).toFixed(2) + ' Celcius'
+    return ((clima?.main.temp)).toFixed(2) + ' Celcius'
   }else{
-    return ((clima?.main.temp)-273.44).toFixed(2) + ' F'
+    return ((clima?.main.temp)).toFixed(2) + ' F'
   }
 }
 
 const minTemp=()=>{
-  return ((clima?.main.temp_min)-273.44).toFixed(2)
+  return ((clima?.main.temp_min)).toFixed(2)
 }
 
 const maxTemp =()=>{
-  return ((clima?.main.temp_max)-273.44).toFixed(2)
+  return ((clima?.main.temp_max)).toFixed(2)
 }
   return (
     <div>
