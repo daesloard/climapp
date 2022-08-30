@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+</head>
+ 
+<body>
+ 
+    <script>
+
+        let numero3
+        let numero5
+        let numero53
+        let i
+        for(i=1;i<=100;i++){
+
+
+            if(i%3==0){
+              let numero3=(i)
+              numero3="Fizz"
+              console.log(numero3)
+        
+            };
+            if (i%5==0){
+              let numero5=(i)
+              numero5="Buzz"
+              console.log(numero5)
+        
+              
+            };
+            if (i%3==0&&i%5==0){
+              let numero53=(i)
+              numero53="FizzBuzz"
+              console.log(numero53)
+        
+            };
+             if(i!==0){
+                console.log(i)
+            }
+                
+            
+            
+          }
+          
+    </script>
+ 
+</body>
+</html>
